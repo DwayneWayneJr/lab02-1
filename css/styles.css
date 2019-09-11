@@ -2,6 +2,7 @@ header {
     background-image: url(https://image.freepik.com/free-vector/cute-bird-pattern_1124-115.jpg);
     text-align: center;
 }
+
 h1 {
     font-size: 40px;
 }
@@ -12,6 +13,8 @@ body {
     color: brown;
     margin: 100px;
     text-align: left;
+}
 
-
+footer {
+    background-image: url(https://image.freepik.com/free-vector/cute-bird-pattern_1124-115.jpg);
 }
