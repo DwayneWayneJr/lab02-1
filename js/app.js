@@ -126,5 +126,5 @@ alert('My kids names are '+ myAnswer + '.');//telling user the possible answers
 console.log(name + ' guessed ' + guess + '. The correct answer is any of the following: '+ myAnswer + '.');
 
 alert('Congratulations!  Your final score is ' + finalScore + ' out of 7. Thanks for playing!');
-
-//tells user the final score
+console.log('final score is ' + finalScore + ' out of 7.');
+//tells user the final score and prints it to the console.
