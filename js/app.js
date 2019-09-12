@@ -1,24 +1,24 @@
 'use strict'
 
-var name = prompt('What is your name?');
+var name = prompt('What is your name?'); //Asks the user thier name.
 
-alert('Hello ' + name + '!  Welcome to my bio! How about a quiz?');
+alert('Hello ' + name + '!  Welcome to my bio! How about a quiz?'); //returns greeting to user
 console.log('Your name is ' + name + '.');
 
-var finalScore = 0;
+var finalScore = 0; //begining of the score keeping tally to be calculated at the end of the ?s
 
 var kids = prompt('Yes or no: Do I have 5 kids?');
 
 if (kids.toLowerCase() === 'yes' || kids.toLowerCase() === 'y') {
     alert('Yep! Crazy, right?');
-    finalScore++;
+    finalScore++; //if answer is correct, score tally is increased by 1
 } else if (kids.toLowerCase() === 'no' || kids.toLowerCase() === 'n') {
     alert('Wrong! I do indeed have 5 kids.');
 } else {
-    alert('Invalid Answer.');
+    alert('Invalid Answer.'); //if user does not input correct options, 'invalid answer' is returned.
 }
 console.log(name + ' guessed ' + kids + '. The correct answer is yes, I have 5 kids.');
-
+// this console.log statement keeps track of user answers and correct answers
 var coffee = prompt('Yes or no: Do I like coffee?');
 
 if (coffee.toLowerCase() === 'yes' || coffee.toLowerCase() === 'y') {
@@ -69,43 +69,47 @@ console.log(name + ' guessed ' + drums + '. The correct answer is yes, I am a dr
 
 var num = 6;
 var numGuess = parseInt(prompt('I am thinking of a number between 1-10.  What is it?  You have 4 guesses!'));
+//asks user to guess a number with 10 possible answers.
 
-
-for (var i = 0; i < 4; i++) {
+for (var i = 0; i < 4; i++) {//this specifies that the user has 5 chances to get this right.
     if (numGuess === num) {
         alert('Great guess!');
         finalScore++;
-        break;
+        break;  //if the guess is correct let the user know and end the code block.
     }else if (numGuess > num) {
-        numGuess = parseInt(prompt('Not quite! Too high. Try again.'));
+        numGuess = parseInt(prompt('Not quite! Too high. Try again.')); 
+        //if the guess is too high, let the user know
     } else if (numGuess < num) {
         numGuess = parseInt(prompt('Not quite! Too low. Try again.'));
+        // if the guess is too low, let the user know
     } else {
         numGuess = parseInt(prompt('Invalid answer. Must be a number.  Try again.'));
-    }
+    } // if the user inputs anything but a number, this is triggered.
 }
 alert('The number is 6!');
 console.log(name + ' guessed '+ numGuess + ' The correct answer is 6.');
 
-var myAnswer = ['isabella', 'sophia', 'jackson', 'ali', 'ava'];
+var myAnswer = ['isabella', 'sophia', 'jackson', 'ali', 'ava']; //an array of my kids names
 
-var guessNum = 0;
-var whileStop = false;
-var correct = false;
-// 1 is less than or equal to 5 OR
-// false === false
+var guessNum = 0; //guess counter
+var whileStop = false; 
+var correct = false; 
+//if either of these statements do not equate to true, the loop will stop.
 while (guessNum <= 5 && whileStop == false) {
-    var guess = prompt('Can you guess any of my kids\' names?') // JOSIE
-    guess = guess.toLowerCase(); // josie
-    for (var c = 0; c < myAnswer.length; c++) {
+    var guess = prompt('Can you guess any of my kids\' names?') // user inputs guess
+    guess = guess.toLowerCase(); // this makes the user input not case sensitive.
+    for (var c = 0; c < myAnswer.length; c++) { //this runs through each item in the array to check if it matches what the user input.
         if (myAnswer[c] === guess) {
             alert('Congratulations!');
             whileStop = true;
             correct = true;
-            finalScore++;
+            finalScore++; //if the user guesses correctly, whileStop changes to true and stops the loop 
+            //from running again.  Score is increased by 1 and the correct condition for the next block of code
+            //is changed.*\
+
         }   
     }
-    // if the answer is wrong....
+    // if the answer is wrong...
     if(!correct){
         // They are on their last guess....
         if(guessNum === 5){
@@ -118,5 +122,9 @@ while (guessNum <= 5 && whileStop == false) {
     // incrament their guess count
     guessNum ++;
 }
+alert('My kids names are '+ myAnswer + '.');//telling user the possible answers
+console.log(name + ' guessed ' + guess + '. The correct answer is any of the following: '+ myAnswer + '.');
 
-    alert('Congratulations!  Your final score is ' + finalScore + ' out of 7. Thanks for playing!');
+alert('Congratulations!  Your final score is ' + finalScore + ' out of 7. Thanks for playing!');
+
+//tells user the final score
