@@ -76,24 +76,25 @@ for (var i = 0; i < 4; i++) {//this specifies that the user has 5 chances to get
         alert('Great guess!');
         finalScore++;
         break;  //if the guess is correct let the user know and end the code block.
-    }else if (numGuess > num) {
-        numGuess = parseInt(prompt('Not quite! Too high. Try again.')); 
+    } else if (numGuess > num) {
+        numGuess = parseInt(prompt('Not quite! Too high. Try again.'));
         //if the guess is too high, let the user know
     } else if (numGuess < num) {
         numGuess = parseInt(prompt('Not quite! Too low. Try again.'));
         // if the guess is too low, let the user know
     } else {
-        numGuess = parseInt(prompt('Invalid answer. Must be a number.  Try again.'));
+        numGuess = parseInt(prompt('Invalid answer. You must enter a number.  Try again.'));
     } // if the user inputs anything but a number, this is triggered.
 }
 alert('The number is 6!');
-console.log(name + ' guessed '+ numGuess + ' The correct answer is 6.');
+console.log(name + ' guessed ' + numGuess + ' The correct answer is 6.');
 
 var myAnswer = ['isabella', 'sophia', 'jackson', 'ali', 'ava']; //an array of my kids names
 
 var guessNum = 0; //guess counter
-var whileStop = false; 
-var correct = false; 
+var whileStop = false;
+var correct = false;
+
 //if either of these statements do not equate to true, the loop will stop.
 while (guessNum <= 5 && whileStop == false) {
     var guess = prompt('Can you guess any of my kids\' names?') // user inputs guess
@@ -103,27 +104,22 @@ while (guessNum <= 5 && whileStop == false) {
             alert('Congratulations!');
             whileStop = true;
             correct = true;
-            finalScore++; //if the user guesses correctly, whileStop changes to true and stops the loop 
-            //from running again.  Score is increased by 1 and the correct condition for the next block of code
-            //is changed.*\
-
-        }   
+            finalScore++; //if the user guesses correctly, whileStop changes to true and stops the loop from running again.  Score is increased by 1 and the correct condition for the next block of code is changed.
+        }
     }
-    // if the answer is wrong...
-    if(!correct){
-        // They are on their last guess....
-        if(guessNum === 5){
+    if (!correct) { // if the answer is wrong. (not correct)
+        if (guessNum === 5) { //if they are on the final guess, do this next line of code.
             alert('Wrong Answer. This message will self-destruct! (KAPOW!)')
         } // they still have guesses remaining.... 
-        else{ 
+        else {
             alert('wrong, try again');
         }
     }
     // incrament their guess count
-    guessNum ++;
+    guessNum++;
 }
-alert('My kids names are '+ myAnswer + '.');//telling user the possible answers
-console.log(name + ' guessed ' + guess + '. The correct answer is any of the following: '+ myAnswer + '.');
+alert('My kids names are ' + myAnswer + '.');//telling user the possible answers
+console.log(name + ' guessed ' + guess + '. The correct answer is any of the following: ' + myAnswer + '.');
 
 alert('Congratulations!  Your final score is ' + finalScore + ' out of 7. Thanks for playing!');
 console.log('final score is ' + finalScore + ' out of 7.');
