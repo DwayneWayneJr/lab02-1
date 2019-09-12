@@ -119,6 +119,7 @@ while (guessNum <= 5 && whileStop == false) {
             alert('Congratulations!');
             whileStop = true;
             correct = true;
+            c = myAnswer.length;
             finalScore++;
         }
     }
@@ -130,13 +131,14 @@ while (guessNum <= 5 && whileStop == false) {
         }
          // they still have guesses remaining.... 
         else {
-            alert('wrong, try again');
+            alert('Definitely wouldn\'t name my kid that. Try again');
         }
     }
-    // incrament their guess count
+    // increment their guess count
     guessNum++;
 }
-alert('My kids names are ' + myAnswer + '.');//telling user the possible answers
+//telling user the possible answers
+alert('My kids names are Isabella, Sophia, Jackson, Ali and Ava.');
 console.log(name + ' guessed ' + guess + '. The correct answer is any of the following: ' + myAnswer + '.');
 
 //tells user the final score and prints it to the console.
